@@ -10,7 +10,8 @@ import dagger.Component
  * Created by lijipei on 2019/9/6.
  */
 @PerComponentScope
-@Component(dependencies = arrayOf(ActivityComponent::class) ,modules = arrayOf(UserModule::class))
+@Component(dependencies = arrayOf(ActivityComponent::class) ,
+        modules = arrayOf(UserModule::class))
 interface UserComponent {
 
     fun inject(activity:RegisterActivity)
