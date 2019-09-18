@@ -22,7 +22,7 @@ open abstract class BaseMvpFragment<T : BasePresenter<*>> : BaseFragment(), Base
     override fun hideLoading() {
     }
 
-    override fun onError() {
+    override fun onError(str:String) {
     }
 
     @Inject
