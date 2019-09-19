@@ -6,6 +6,8 @@ import android.widget.EditText
 import android.widget.ImageView
 import com.kotlin.base.data.protocol.BaseResp
 import com.kotlin.base.rx.BaseSubscriber
+import com.kotlin.base.utils.GlideUtils
+import com.kotlin.base.widgets.DefaultTextWatcher
 import com.trello.rxlifecycle.LifecycleProvider
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
@@ -60,21 +62,21 @@ fun View.onClick(method:() -> Unit):View{
 /*
     扩展Button可用性
  */
-//fun Button.enable(et:EditText,method: () -> Boolean){
-//    val btn = this
-//    et.addTextChangedListener(object : DefaultTextWatcher(){
-//        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//            btn.isEnabled = method()
-//        }
-//    })
-//}
+fun Button.enable(et:EditText,method: () -> Boolean){
+    val btn = this
+    et.addTextChangedListener(object : DefaultTextWatcher(){
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            btn.isEnabled = method()
+        }
+    })
+}
 
 /*
     ImageView加载网络图片
  */
-//fun ImageView.loadUrl(url: String) {
-//    GlideUtils.loadUrlImage(context, url, this)
-//}
+fun ImageView.loadUrl(url: String) {
+    GlideUtils.loadUrlImage(context, url, this)
+}
 
 /*
     多状态视图开始加载
