@@ -22,19 +22,20 @@ import org.jetbrains.anko.find
  */
 class HomeFragment: BaseFragment() {
 
-    private lateinit var mHomeBanner:Banner
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val rootView = inflater.inflate(R.layout.fragment_home,null)
-        initBanner(rootView)
         return rootView
     }
 
-    private fun initBanner(view: View) {
-        mHomeBanner = view.find(R.id.mHomeBanner)
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initBanner()
+        initNews()
+    }
 
+    private fun initBanner() {
         mHomeBanner.setImageLoader(BannerImageLoader())
         mHomeBanner.setImages(listOf(HOME_BANNER_ONE, HOME_BANNER_TWO,
                 HOME_BANNER_THREE, HOME_BANNER_FOUR))
@@ -44,5 +45,14 @@ class HomeFragment: BaseFragment() {
         mHomeBanner.setIndicatorGravity(BannerConfig.RIGHT)
         //banner设置方法全部调用完毕时最后调用
         mHomeBanner.start()
+    }
+
+    /*
+        初始化公告
+     */
+    private fun initNews(){
+        //公告
+        mNewsFlipperView.setData(arrayOf("夏日炎炎，第一波福利还有30秒到达战场",
+                "新用户立领1000元优惠券"))
     }
 }
