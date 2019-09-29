@@ -91,11 +91,11 @@ dependencies {
     //标签
     compile 'com.github.shts:TriangleLabelView:1.1.2'
     //画廊
-//    compile 'com.github.crosswall:Android-Coverflow:release-v1.0.4'
-//    //MulitStateView
-//    compile "com.github.Kennyc1012:MultiStateView:$multi_state_view_version"
-//    //上下拉刷新
-//    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+    compile 'com.github.crosswall:Android-Coverflow:release-v1.0.4'
+    //MulitStateView
+    compile "com.github.Kennyc1012:MultiStateView:$multi_state_view_version"
+    //上下拉刷新
+    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
 //    //Kotlin Bus
 //    compile 'com.eightbitlab:rxbus:1.0.2'
 //    //FlowLayout
